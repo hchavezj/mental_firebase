@@ -41,6 +41,16 @@ import { ref } from 'vue'
 import { useStore } from 'vuex'
 
 export default {
+	name: "LoginView",
+	components: {},
+	data () {
+		return { 
+			apikeytest: process.env.VUE_APP_FIREBASE_APIKEY
+		};
+	},
+	mounted () {
+		console.log(process.env.VUE_APP_FIREBASE_APIKEY)
+	},
 	setup () {
 		const login_form = ref({});
 		const register_form = ref({});
