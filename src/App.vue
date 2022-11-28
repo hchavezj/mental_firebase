@@ -10,7 +10,16 @@
     <router-link to="/">Home</router-link>&nbsp;|&nbsp;
     <router-link to="/about">About</router-link>&nbsp;|&nbsp;
     <router-link to="/contact">Contact</router-link>&nbsp;|&nbsp;
-    <router-link to="/login">Login</router-link>
+    <button
+      @click="$store.dispatch('logout')"
+      class="font-bold text-[#5c5e7a]"
+      v-if="$store.state.user"
+    >
+      Logout
+    </button>
+    <div v-else>
+      <router-link to="/login">Login</router-link>
+    </div>
   </nav>
   <router-view />
 </template>
@@ -60,3 +69,19 @@ body {
   margin-bottom: 2rem;
 }
 </style>
+
+<script>
+import { onBeforeMount } from "vue";
+import { useStore } from "vuex";
+
+export default {
+  setup() {
+    const store = useStore();
+    onBeforeMount(() => {
+      store.dispatch("fetchUser");
+    });
+
+    return { user: store.state.user };
+  },
+};
+</script>

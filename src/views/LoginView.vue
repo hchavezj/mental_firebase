@@ -45,11 +45,9 @@ export default {
 	components: {},
 	data () {
 		return { 
-			apikeytest: process.env.VUE_APP_FIREBASE_APIKEY
 		};
 	},
 	mounted () {
-		console.log(process.env.VUE_APP_FIREBASE_APIKEY)
 	},
 	setup () {
 		const login_form = ref({});
