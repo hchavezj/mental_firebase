@@ -2,7 +2,7 @@
   <div
     class="flex m-auto mt-2 mb-2 justify-center items-center h-[150px] text-[4rem] bg-[url('../src/assets/3ccc.jpg')] bg-cover bg-center max-h-40 max-w-[80%]"
   >
-    <p>Krystal Clear Mental Health</p>
+    <p class="text-[3rem]">Krystal Clear Mental Health</p>
   </div>
   <nav
     class="flex justify-center items-center m-auto mb-[10px] text-[1.2rem] bg-[#f3dfdf] max-w-[80%] h-[50px]"
