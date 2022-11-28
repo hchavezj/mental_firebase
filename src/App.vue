@@ -1,27 +1,29 @@
 <template>
-  <div
-    class="flex m-auto mt-2 mb-2 justify-center items-center h-[150px] text-[4rem] bg-[url('../src/assets/3ccc.jpg')] bg-cover bg-center max-h-40 max-w-[80%]"
-  >
-    <p class="text-[3rem]">Krystal Clear Mental Health</p>
-  </div>
-  <nav
-    class="flex justify-center items-center m-auto mb-[10px] text-[1.2rem] bg-[#f3dfdf] max-w-[80%] h-[50px]"
-  >
-    <router-link to="/">Home</router-link>&nbsp;|&nbsp;
-    <router-link to="/about">About</router-link>&nbsp;|&nbsp;
-    <router-link to="/contact">Contact</router-link>&nbsp;|&nbsp;
-    <button
-      @click="$store.dispatch('logout')"
-      class="font-bold text-[#5c5e7a]"
-      v-if="$store.state.user"
+  <main>
+    <div
+      class="card flex m-auto mt-2 mb-2 justify-center items-center h-[150px] text-[4rem] bg-[url('../src/assets/3ccc.jpg')] bg-cover bg-center max-h-40 max-w-[80%]"
     >
-      Logout
-    </button>
-    <div v-else>
-      <router-link to="/login">Login</router-link>
+      <p class="text-[3rem]">Krystal Clear Mental Health</p>
     </div>
-  </nav>
-  <router-view />
+    <nav
+      class="card flex justify-center items-center m-auto mb-[10px] text-[1.2rem] bg-[#f3dfdf] max-w-[80%] h-[50px]"
+    >
+      <router-link to="/">Home</router-link>&nbsp;|&nbsp;
+      <router-link to="/about">About</router-link>&nbsp;|&nbsp;
+      <router-link to="/contact">Contact</router-link>&nbsp;|&nbsp;
+      <button
+        @click="$store.dispatch('logout')"
+        class="font-bold text-[#5c5e7a]"
+        v-if="$store.state.user"
+      >
+        Logout
+      </button>
+      <div v-else>
+        <router-link to="/login">Login</router-link>
+      </div>
+    </nav>
+    <router-view />
+  </main>
 </template>
 
 <style>
@@ -35,6 +37,11 @@
   margin: auto;
   text-align: center;
   max-width: 80%;
+}
+
+main {
+  max-width: 80%;
+  margin: auto;
 }
 
 nav a {
@@ -57,8 +64,10 @@ body {
 }
 
 .card {
-  background-color: #fff;
+  background-color: #f3dfdf;
   margin: 0 auto;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  border-radius: 0.5rem;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
@@ -67,6 +76,7 @@ body {
   font-size: 2rem;
   text-transform: uppercase;
   margin-bottom: 2rem;
+  text-decoration: underline;
 }
 </style>
 
